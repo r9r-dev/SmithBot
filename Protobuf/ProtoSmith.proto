@@ -1,0 +1,23 @@
+syntax = "proto3";
+package smith.proto.protosmith;
+
+// C#
+option csharp_namespace = "Smith.Proto.ProtoSmith";
+
+service Bot
+{
+  rpc Ask (AskRequest) returns (AskResponse);
+}
+
+message AskRequest
+{
+  uint32 id = 1;
+  string message = 2;
+}
+
+message AskResponse
+{
+  uint32 id = 1;
+  string message = 2;
+  repeated string answers = 3;
+}
